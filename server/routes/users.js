@@ -1,5 +1,5 @@
 import express from "express";
-import { User } from "../models/User.js"; // ✅ Import correctly
+import { User } from "../models/User.js";
 
 const router = express.Router();
 
@@ -28,4 +28,4 @@ router.post("/", async (req, res) => {
   }
 });
 
-export default router; // ✅ Correct ES module export
+export default router;

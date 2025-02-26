@@ -6,4 +6,4 @@ const userSchema = new mongoose.Schema({
   role: { type: String, enum: ["anonymous", "registered", "verified"], default: "anonymous" }, // User role
 });
 
-export const User = mongoose.model("User", userSchema); // ✅ Named export
+export const User = mongoose.model("User", userSchema);

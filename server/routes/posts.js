@@ -1,5 +1,5 @@
 import express from "express";
-import { Post } from "../models/Post.js"; // ✅ Must use {} for named exports
+import { Post } from "../models/Post.js";
 
 const router = express.Router();
 
@@ -53,4 +53,4 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-export default router; // ✅ Correct ES module export
+export default router;
