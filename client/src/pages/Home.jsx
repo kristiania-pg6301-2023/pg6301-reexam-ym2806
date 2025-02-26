@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
+import "./Home.css"; // Import the CSS for styling
 
-// Use the correct API base URL
 const API_BASE_URL = "https://pg6301-app-271305e16ae4.herokuapp.com/api";
 
 function Home() {
@@ -56,27 +56,40 @@ function Home() {
   };
 
   return (
-    <div>
-      <h1>Velkommen til hjemmesiden!</h1>
+    <div className="container">
+      {/* Navbar */}
+      <nav className="navbar">
+        <h2>🚀 PG6301 Blog</h2>
+      </nav>
 
-      <h2>Opprett et nytt innlegg</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Tittel" value={title} onChange={(e) => setTitle(e.target.value)} required />
-        <textarea placeholder="Innhold" value={content} onChange={(e) => setContent(e.target.value)} required />
-        <input type="text" placeholder="Forfatter-ID" value={author} onChange={(e) => setAuthor(e.target.value)} required />
-        <button type="submit">Publiser</button>
-      </form>
+      {/* Main content */}
+      <div className="content">
+        <h1>Velkommen til hjemmesiden!</h1>
 
-      <h2>Innlegg</h2>
-      <ul>
-        {posts.map((post) => (
-          <li key={post._id}>
-            <h3>{post.title}</h3>
-            <p>{post.content}</p>
-            <button onClick={() => handleDelete(post._id)}>Slett</button>
-          </li>
-        ))}
-      </ul>
+        {/* Post creation form */}
+        <div className="form-container">
+          <h2>Opprett et nytt innlegg</h2>
+          <form onSubmit={handleSubmit}>
+            <input type="text" placeholder="Tittel" value={title} onChange={(e) => setTitle(e.target.value)} required />
+            <textarea placeholder="Innhold" value={content} onChange={(e) => setContent(e.target.value)} required />
+            <input type="text" placeholder="Forfatter-ID" value={author} onChange={(e) => setAuthor(e.target.value)} required />
+            <button type="submit" className="publish-btn">Publiser</button>
+          </form>
+        </div>
+
+        {/* Posts display */}
+        <div className="posts-container">
+          <h2>Innlegg</h2>
+          {posts.length === 0 ? <p>Ingen innlegg ennå. Vær den første til å skrive!</p> : null}
+          {posts.map((post) => (
+            <div key={post._id} className="post-card">
+              <h3>{post.title}</h3>
+              <p>{post.content}</p>
+              <button className="delete-btn" onClick={() => handleDelete(post._id)}>Slett</button>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
