@@ -42,11 +42,6 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-// Default route
-app.get("/", (req, res) => {
-  res.send("Backend running!");
-});
-
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
