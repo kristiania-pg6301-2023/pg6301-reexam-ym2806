@@ -32,11 +32,6 @@ mongoose
 app.use("/api/posts", postRoutes);
 app.use("/api/users", userRoutes);
 
-//local testing with npm run server
-app.get("/", (req, res) => {
-  res.send("Backend running locally!");
-});
-
 // Serve frontend in production
 if (process.env.NODE_ENV === "production") {
   const clientBuildPath = path.resolve(__dirname, "../client/dist");
