@@ -33,8 +33,9 @@ app.use("/api/posts", postRoutes);
 app.use("/api/users", userRoutes);
 
 // Serve frontend in production
+// ✅ Serve frontend in production
 if (process.env.NODE_ENV === "production") {
-  const clientBuildPath = path.resolve(__dirname, "../client/build");
+  const clientBuildPath = path.resolve(__dirname, "../client/dist"); // Vite uses "dist"
   app.use(express.static(clientBuildPath));
 
   app.get("*", (req, res) => {
