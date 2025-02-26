@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./Home.css"; // Import the CSS for styling
+import "./Home.css";
 
 const API_BASE_URL = "https://pg6301-app-271305e16ae4.herokuapp.com/api";
 
@@ -59,7 +59,7 @@ function Home() {
     <div className="container">
       {/* Navbar */}
       <nav className="navbar">
-        <h2>🚀 PG6301 Blog</h2>
+        <h2>The exam-gram</h2>
       </nav>
 
       {/* Main content */}

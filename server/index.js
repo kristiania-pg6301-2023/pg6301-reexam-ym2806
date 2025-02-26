@@ -17,7 +17,7 @@ import userRoutes from "./routes/users.js";
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-console.log("🔍 MONGO_URI:", process.env.MONGO_URI);
+console.log("MONGO_URI:", process.env.MONGO_URI);
 
 app.use(cors());
 app.use(express.json());
@@ -33,9 +33,8 @@ app.use("/api/posts", postRoutes);
 app.use("/api/users", userRoutes);
 
 // Serve frontend in production
-// ✅ Serve frontend in production
 if (process.env.NODE_ENV === "production") {
-  const clientBuildPath = path.resolve(__dirname, "../client/dist"); // Vite uses "dist"
+  const clientBuildPath = path.resolve(__dirname, "../client/dist");
   app.use(express.static(clientBuildPath));
 
   app.get("*", (req, res) => {
