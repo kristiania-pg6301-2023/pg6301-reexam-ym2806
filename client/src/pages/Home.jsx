@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 
+// Use the correct API base URL
+const API_BASE_URL = "https://pg6301-app-271305e16ae4.herokuapp.com/api";
+
 function Home() {
   const [posts, setPosts] = useState([]);
   const [title, setTitle] = useState("");
@@ -7,7 +10,7 @@ function Home() {
   const [author, setAuthor] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/posts")
+    fetch(`${API_BASE_URL}/posts`)
       .then((response) => response.json())
       .then((data) => setPosts(data))
       .catch((error) => console.error("Feil ved henting:", error));
@@ -23,7 +26,7 @@ function Home() {
     const newPost = { title, content, authorId: author };
 
     try {
-      const response = await fetch("http://localhost:5000/api/posts", {
+      const response = await fetch(`${API_BASE_URL}/posts`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newPost),
@@ -45,7 +48,7 @@ function Home() {
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`http://localhost:5000/api/posts/${id}`, { method: "DELETE" });
+      await fetch(`${API_BASE_URL}/posts/${id}`, { method: "DELETE" });
       setPosts(posts.filter((post) => post._id !== id));
     } catch (error) {
       console.error("Feil ved sletting av innlegg:", error);
