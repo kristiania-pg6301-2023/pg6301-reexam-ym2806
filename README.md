@@ -1,4 +1,4 @@
-**PG6301 - Eksamen**
+**PG6301 - Eksamen 2025**
 
 (Vennligst les README i text editor grunnet elendig formatering)
 Dette er min løsning for eksamen i PG6301. Prosjektet er en enkel social media API med en frontend som lar brukere opprette og slette innlegg.
