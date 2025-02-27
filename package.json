@@ -1,0 +1,45 @@
+{
+  "name": "pg6301-reexam-ym2806",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/nHPSu_dn)",
+  "main": "index.js",
+  "scripts": {
+    "server": "node server/index.js",
+    "client": "npm start --prefix client",
+    "start": "node server/index.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "test:watch": "vitest --watch",
+    "test": "cross-env NODE_ENV=test vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kristiania-pg6301-2023/pg6301-reexam-ym2806.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kristiania-pg6301-2023/pg6301-reexam-ym2806/issues"
+  },
+  "homepage": "https://github.com/kristiania-pg6301-2023/pg6301-reexam-ym2806#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.10.1"
+  },
+  "engines": {
+    "node": "20.x",
+    "npm": "8.x"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3",
+    "nodemon": "^3.1.9",
+    "supertest": "^7.0.0",
+    "vitest": "^3.0.7"
+  }
+}
